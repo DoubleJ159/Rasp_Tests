@@ -4,12 +4,12 @@ import time as t
 import RPi.GPIO as g
 
 g.setmode(g.BOARD)
-g.setup(18, g.OUT)
+g.setup(15, g.OUT)
 
 for i in range (3):
-    g.output(18, 1)
+    g.output(15, 1)
     t.sleep(3)
-    g.output(18, 0)
+    g.output(15, 0)
     t.sleep(2)
     print("Done ", i)
 
