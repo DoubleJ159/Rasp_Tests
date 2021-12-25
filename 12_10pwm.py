@@ -17,6 +17,9 @@ dc = 0
 pwm_12.start(dc)
 pwm_10.start(dc)
 
+pygame.display.init()
+SCR = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+
 def move():
     try:
         while True:
