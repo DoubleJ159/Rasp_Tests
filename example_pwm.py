@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BOARD)    # Set Pi to use pin number when referencing GPIO pin
                             # GPIO.setmode(GPIO.BCM) lets you use broadcom cahnnel names instead of numbers
 
 GPIO.setup(12, GPIO.OUT)    #set GPIO pin 12 to output mode
-pwm = GPIO.PWM(12, 100)     # Initialize PWM on pwmPin 100Hz frequency
+pwm = GPIO.PWM(12, 500)     # Initialize PWM on pwmPin 100Hz frequency
 
 #   Main loop
 print("\n   Press Ctrl C to quit\n")
@@ -17,12 +17,12 @@ pwm.start(dc)   # start with the 0% duty cyle
 
 try:
     while True:                         # Loop until cancelled
-        for dc in range(0, 101, 5):     # Loop 0 to 100 stepping dc by 5 each loop
+        for dc in range(0, 501, 50):     # Loop 0 to 100 stepping dc by 5 each loop
             pwm.ChangeDutyCycle(dc)
             time.sleep(0.05)            # wait 0.05 seconds at current LED brightness
             print(dc)
 
-        for dc in range(95, 0, -5):     # Loop 95 to 5 stepping dc down by 5 each Loop
+        for dc in range(450, 0, -50):     # Loop 95 to 5 stepping dc down by 5 each Loop
             pwm.ChangeDutyCycle(dc)
             time.sleep(0.05)
             print(dc)
