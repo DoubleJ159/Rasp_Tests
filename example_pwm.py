@@ -17,12 +17,12 @@ pwm.start(dc)   # start with the 0% duty cyle
 
 try:
     while True:                         # Loop until cancelled
-        for dc in range(0, 501, 50):     # Loop 0 to 100 stepping dc by 5 each loop
+        for dc in range(0, 101, 5):     # Loop 0 to 100 stepping dc by 5 each loop
             pwm.ChangeDutyCycle(dc)
             time.sleep(0.05)            # wait 0.05 seconds at current LED brightness
             print(dc)
 
-        for dc in range(450, 0, -50):     # Loop 95 to 5 stepping dc down by 5 each Loop
+        for dc in range(95, 0, -5):     # Loop 95 to 5 stepping dc down by 5 each Loop
             pwm.ChangeDutyCycle(dc)
             time.sleep(0.05)
             print(dc)
